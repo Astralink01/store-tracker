@@ -1,0 +1,45 @@
+name: Build Store Tracker APK
+
+# Runs every time you push code to GitHub — APK is ready in ~5 minutes
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  # Lets you trigger a build manually from the GitHub website (Actions tab → Run workflow)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Download your code onto GitHub's build server
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Install Java 17 (required by Android Gradle Plugin 8.x)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Set up Gradle (downloads the gradle-wrapper.jar automatically — no laptop needed)
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+
+      # 4. Build the debug APK (no signing key required)
+      - name: Build Debug APK
+        run: gradle assembleDebug --no-daemon
+        working-directory: ${{ github.workspace }}
+
+      # 5. Upload the APK so you can download it from the GitHub Actions page on your phone
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: StoreTracker-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
