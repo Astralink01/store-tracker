@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLight">
+
+    <!-- ── Toolbar ───────────────────────────────────────────────────────── -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarPOS"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="New Sale"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── Products list label ───────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/tvProductsLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tap a product to add it to the cart"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/textSecondary"
+        android:padding="8dp"
+        android:background="@color/colorSurface"
+        app:layout_constraintTop_toBottomOf="@id/toolbarPOS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── Product list (top half) ───────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPOSProducts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tvProductsLabel"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVerticalWeight="1" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/rvPOSProducts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── Cart label ────────────────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/tvCartLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cart"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:padding="8dp"
+        android:textColor="@color/textSecondary"
+        android:background="@color/colorSurface"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── Cart list (bottom half) ───────────────────────────────────────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tvCartLabel"
+        app:layout_constraintBottom_toTopOf="@id/tvCartTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVerticalWeight="1" />
+
+    <!-- ── Running total ─────────────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/tvCartTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Total: $0.00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:padding="12dp"
+        android:gravity="end"
+        android:background="@color/colorSurface"
+        app:layout_constraintBottom_toTopOf="@id/btnBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── Action buttons ────────────────────────────────────────────────── -->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/btnBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="btnClearCart,btnCheckout"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnClearCart"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="Clear"
+        android:backgroundTint="#F44336"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCheckout"
+        app:layout_constraintWidth_percent="0.35" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheckout"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="Checkout →"
+        android:textSize="16sp"
+        android:backgroundTint="@color/colorAccent"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnClearCart"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

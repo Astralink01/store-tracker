@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colors -->
+    <color name="colorPrimary">#1565C0</color>       <!-- Blue 800 -->
+    <color name="colorPrimaryDark">#003c8f</color>
+    <color name="colorAccent">#00897B</color>         <!-- Teal 600 -->
+    <color name="colorSurface">#F5F5F5</color>
+    <color name="backgroundLight">#FAFAFA</color>
+    <color name="textSecondary">#757575</color>
+
+    <!-- Low stock alert -->
+    <color name="lowStockRed">#D32F2F</color>
+    <color name="lowStockBackground">#FFEBEE</color>
+
+    <!-- Calculator -->
+    <color name="calcDigit">#333333</color>
+    <color name="calcOp">#FF6F00</color>
+    <color name="calcSpecial">#424242</color>
+    <color name="calcEquals">#00897B</color>
+</resources>

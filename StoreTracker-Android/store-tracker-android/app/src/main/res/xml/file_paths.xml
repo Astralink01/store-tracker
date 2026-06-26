@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider path config.
+    "files-path" maps to Context.getFilesDir() — the app's private internal storage.
+    This lets the camera intent write a photo directly into our internal files directory
+    via a content:// URI without needing WRITE_EXTERNAL_STORAGE permission.
+-->
+<paths>
+    <files-path name="internal_files" path="." />
+    <files-path name="product_images" path="product_images/" />
+</paths>

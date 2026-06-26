@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Store Tracker</string>
+    <string name="inventory">Inventory</string>
+    <string name="new_sale">New Sale</string>
+    <string name="order_history">Order History</string>
+    <string name="calculator">Calculator</string>
+    <string name="add_product">Add Product</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="checkout">Checkout</string>
+    <string name="done_order">Done Order</string>
+    <string name="low_stock_warning">Low stock!</string>
+    <string name="no_orders_yet">No orders yet.</string>
+    <string name="cart_empty">Cart is empty</string>
+    <string name="content_desc_product_image">Product image</string>
+</resources>

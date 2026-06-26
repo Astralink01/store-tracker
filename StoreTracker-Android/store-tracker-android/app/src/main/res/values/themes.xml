@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.StoreTracker" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/backgroundLight</item>
+    </style>
+
+    <!-- Calculator button styles -->
+    <style name="CalcBtn" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalcBtn.Digit" parent="CalcBtn">
+        <item name="android:background">#2C2C2C</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CalcBtn.Op" parent="CalcBtn">
+        <item name="android:background">@color/calcOp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CalcBtn.Special" parent="CalcBtn">
+        <item name="android:background">@color/calcSpecial</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CalcBtn.Equals" parent="CalcBtn">
+        <item name="android:background">@color/calcEquals</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+</resources>
